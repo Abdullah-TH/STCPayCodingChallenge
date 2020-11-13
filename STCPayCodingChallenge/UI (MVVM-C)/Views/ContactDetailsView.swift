@@ -9,8 +9,6 @@ import UIKit
 
 final class ContactDetailsView: UIView {
     
-    var keyvalues = [[String: String]]()
-    
     lazy var photoView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 50
@@ -24,50 +22,28 @@ final class ContactDetailsView: UIView {
     
     lazy var nameLabel = label(textAlignment: .center)
     lazy var descriptionLabel: UILabel = label(textColor: .gray)
-    
-    lazy var nameAndDescriptionStack: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
-        sv.axis = .vertical
-        sv.spacing = 8
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
-    }()
+    lazy var nameAndDescriptionStack: UIStackView = stackView(
+        axis: .vertical,
+        spacing: 8,
+        views: [nameLabel, descriptionLabel]
+    )
     
     private lazy var partyKeyLabel = smallGrayLabel()
-    
     private lazy var roleKeyLabel = smallGrayLabel()
-    
     lazy var partyLabel = label()
     lazy var roleLabel = label()
-    
-    lazy var partyStackView: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [partyKeyLabel, partyLabel])
-        sv.axis = .vertical
-        sv.spacing = 8
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
-    }()
-    
-    lazy var roleStackView: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [roleKeyLabel, roleLabel])
-        sv.axis = .vertical
-        sv.spacing = 8
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
-    }()
+    lazy var partyStackView: UIStackView = stackView(views: [partyKeyLabel, partyLabel])
+    lazy var roleStackView: UIStackView = stackView(views: [roleKeyLabel, roleLabel])
+    lazy var partyAndRoleStack: UIStackView = stackView(
+        axis: .horizontal,
+        spacing: 30,
+        views: [roleStackView, separatorView, partyStackView]
+    )
     
     lazy var separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
         return view
-    }()
-    
-    lazy var partyAndRoleStack: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [roleStackView, separatorView, partyStackView])
-        sv.axis = .horizontal
-        sv.spacing = 30
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
     }()
     
     lazy var emailButton = button(with: #imageLiteral(resourceName: "email"))
@@ -99,21 +75,18 @@ final class ContactDetailsView: UIView {
     lazy var websiteKeyLabel = smallGrayLabel()
     lazy var websiteLabel = label()
     
-    lazy var keyValueLabelsStack: UIStackView = {
-        var stacks = [UIStackView]()
-        let sv = UIStackView(arrangedSubviews: [
-            embedInStackView(addressKeyLabel, addressLabel),
-            embedInStackView(officeKeyLabel, officeLabel),
-            embedInStackView(birthdayKeyLabel, birthdayLabel),
-            embedInStackView(genderKeyLabel, genderLabel),
-            embedInStackView(sortnameKeyLabel, sortnameLabel),
-            embedInStackView(websiteKeyLabel, websiteLabel)
-        ])
-        sv.axis = .vertical
-        sv.spacing = 16
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
-    }()
+    lazy var keyValueLabelsStack: UIStackView = stackView(
+        axis: .vertical,
+        spacing: 16,
+        views: [
+            stackView(views: [addressKeyLabel, addressLabel]),
+            stackView(views: [officeKeyLabel, officeLabel]),
+            stackView(views: [birthdayKeyLabel, birthdayLabel]),
+            stackView(views: [genderKeyLabel, genderLabel]),
+            stackView(views: [sortnameKeyLabel, sortnameLabel]),
+            stackView(views: [websiteKeyLabel, websiteLabel])
+        ]
+    )
     
     lazy var cardView: UIView = {
         let view = UIView()
@@ -132,9 +105,8 @@ final class ContactDetailsView: UIView {
         setup()
     }
     
-    convenience init(keyvalues: [[String: String]]) {
+    convenience init() {
         self.init(frame: .zero)
-        self.keyvalues = keyvalues
         setup()
     }
     
@@ -227,14 +199,6 @@ final class ContactDetailsView: UIView {
             keyValueLabelsStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
-    
-    
-    private func embedInStackView(_ view1: UIView, _ view2: UIView) -> UIStackView {
-        let sv = UIStackView(arrangedSubviews: [view1, view2])
-        sv.axis = .vertical
-        sv.spacing = 8
-        return sv
-    }
  
     private func label(
         font: UIFont = UIFont.systemFont(ofSize: 17),
@@ -265,5 +229,17 @@ final class ContactDetailsView: UIView {
         button.setImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }
+    
+    private func stackView(
+        axis: NSLayoutConstraint.Axis = .vertical,
+        spacing: CGFloat = 8,
+        views: [UIView]
+    ) -> UIStackView {
+        let sv = UIStackView(arrangedSubviews: views)
+        sv.axis = axis
+        sv.spacing = spacing
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
     }
 }
