@@ -34,6 +34,13 @@ final class ContactListViewController: UIViewController {
         viewModel.fetchSenators()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.separatorStyle = .none
