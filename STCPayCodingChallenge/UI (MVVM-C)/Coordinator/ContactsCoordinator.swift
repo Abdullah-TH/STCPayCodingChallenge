@@ -28,10 +28,20 @@ final class ContactsCoordinator: UIViewController {
     }
     
     private func setup() {
+        contactListVC.delegate = self 
         navigator.viewControllers = [contactListVC]
     }
     
     private func start() {
         add(child: navigator)
+    }
+}
+
+extension ContactsCoordinator: ContactListViewControllerDelegate {
+    
+    func didSelect(senator: UISenator) {
+        let contactDetailsVC = ContactDetailsViewController()
+        contactDetailsVC.view.backgroundColor = .purple
+        navigator.pushViewController(contactDetailsVC, animated: true)
     }
 }

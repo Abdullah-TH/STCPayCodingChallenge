@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol ContactListViewControllerDelegate: class {
+    
+    func didSelect(senator: UISenator)
+}
+
 final class ContactListViewController: UIViewController {
     
+    weak var delegate: ContactListViewControllerDelegate?
     let tableView = ContactListTableView()
     private let viewModel: SenatorsViewModel
     
@@ -72,4 +78,11 @@ extension ContactListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let senator = viewModel.senators[indexPath.row]
+        delegate?.didSelect(senator: senator)
+    }
 }
+
+

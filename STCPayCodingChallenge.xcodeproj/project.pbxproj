@@ -26,6 +26,7 @@
 		6A0B20BD255EE51800C31454 /* AppComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B20BC255EE51800C31454 /* AppComposer.swift */; };
 		6A0B20C2255EE9DE00C31454 /* ContactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B20C1255EE9DE00C31454 /* ContactsCoordinator.swift */; };
 		6A0B20C7255EEA1C00C31454 /* UIViewController+addChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B20C6255EEA1C00C31454 /* UIViewController+addChild.swift */; };
+		6A0B20E6255EEB3B00C31454 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B20E5255EEB3B00C31454 /* ContactDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		6A0B20BC255EE51800C31454 /* AppComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComposer.swift; sourceTree = "<group>"; };
 		6A0B20C1255EE9DE00C31454 /* ContactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCoordinator.swift; sourceTree = "<group>"; };
 		6A0B20C6255EEA1C00C31454 /* UIViewController+addChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+addChild.swift"; sourceTree = "<group>"; };
+		6A0B20E5255EEB3B00C31454 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				6A0B206F255ED96400C31454 /* ContactListTableView.swift */,
 				6A0B2082255EDA8100C31454 /* ContactCell.swift */,
 				6A0B206A255ED81B00C31454 /* ContactListViewController.swift */,
+				6A0B20E5255EEB3B00C31454 /* ContactDetailsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				6A0B20BD255EE51800C31454 /* AppComposer.swift in Sources */,
 				6A0B20A5255EE20E00C31454 /* FileSenatorsLoader.swift in Sources */,
 				6A0B2070255ED96400C31454 /* ContactListTableView.swift in Sources */,
+				6A0B20E6255EEB3B00C31454 /* ContactDetailsViewController.swift in Sources */,
 				6A0B20B3255EE3CA00C31454 /* SenatorsViewModel.swift in Sources */,
 				6A0B20AA255EE22900C31454 /* DataSenator.swift in Sources */,
 				6A0B2029255ED2DD00C31454 /* AppDelegate.swift in Sources */,
