@@ -22,21 +22,8 @@ final class ContactDetailsView: UIView {
         return imageView
     }()
     
-    lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        return label
-    }()
-    
-    lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        label.textColor = .gray
-        return label
-    }()
+    lazy var nameLabel = label(textAlignment: .center)
+    lazy var descriptionLabel: UILabel = label(textColor: .gray)
     
     lazy var nameAndDescriptionStack: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
@@ -46,37 +33,12 @@ final class ContactDetailsView: UIView {
         return sv
     }()
     
-    private lazy var partyKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.numberOfLines = 0
-        label.text = "Party"
-        label.textColor = .gray
-        return label
-    }()
+    private lazy var partyKeyLabel = smallGrayLabel()
     
-    private lazy var roleKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.numberOfLines = 0
-        label.text = "Role"
-        label.textColor = .gray
-        return label
-    }()
+    private lazy var roleKeyLabel = smallGrayLabel()
     
-    lazy var partyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var roleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
+    lazy var partyLabel = label()
+    lazy var roleLabel = label()
     
     lazy var partyStackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [partyKeyLabel, partyLabel])
@@ -108,26 +70,9 @@ final class ContactDetailsView: UIView {
         return sv
     }()
     
-    lazy var emailButton: UIButton = {
-        let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "email"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    lazy var phoneButton: UIButton = {
-        let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "phone"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    lazy var speakButton: UIButton = {
-        let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "speak"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    lazy var emailButton = button(with: #imageLiteral(resourceName: "email"))
+    lazy var phoneButton = button(with: #imageLiteral(resourceName: "phone"))
+    lazy var speakButton = button(with: #imageLiteral(resourceName: "speak"))
     
     lazy var buttonsStackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [emailButton, phoneButton, speakButton])
@@ -137,133 +82,22 @@ final class ContactDetailsView: UIView {
         return sv
     }()
     
-    lazy var addressKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "Address"
-        return label
-    }()
-    
-    lazy var addressLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var officeKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "Office"
-        return label
-    }()
-    
-    lazy var officeLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var personNameKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "Name"
-        return label
-    }()
-    
-    lazy var personNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var birthdayKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "Birthday"
-        return label
-    }()
-    
-    lazy var birthdayLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var endDateKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "End Date"
-        return label
-    }()
-    
-    lazy var endDateLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var genderKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "Gender"
-        return label
-    }()
-    
-    lazy var genderLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var sortnameKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "Sortname"
-        return label
-    }()
-    
-    lazy var sortnameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var websiteKeyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.text = "Website "
-        return label
-    }()
-    
-    lazy var websiteLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
+    lazy var addressKeyLabel = smallGrayLabel()
+    lazy var addressLabel = label()
+    lazy var officeKeyLabel = smallGrayLabel()
+    lazy var officeLabel = label()
+    lazy var personNameKeyLabel = smallGrayLabel()
+    lazy var personNameLabel = label()
+    lazy var birthdayKeyLabel = smallGrayLabel()
+    lazy var birthdayLabel = label()
+    lazy var enddateKeyLabel = smallGrayLabel()
+    lazy var endDateLabel = label()
+    lazy var genderKeyLabel = smallGrayLabel()
+    lazy var genderLabel = label()
+    lazy var sortnameKeyLabel = smallGrayLabel()
+    lazy var sortnameLabel = label()
+    lazy var websiteKeyLabel = smallGrayLabel()
+    lazy var websiteLabel = label()
     
     lazy var keyValueLabelsStack: UIStackView = {
         var stacks = [UIStackView]()
@@ -401,21 +235,35 @@ final class ContactDetailsView: UIView {
         sv.spacing = 8
         return sv
     }
-    
-    private func createKeyValueLabelsInStack(key: String, value: String) -> UIStackView {
-        let keyLabel = UILabel()
-        keyLabel.font = UIFont.systemFont(ofSize: 14)
-        keyLabel.text = key
-        keyLabel.textColor = .gray
-        
-        let valueLabel = UILabel()
-        valueLabel.text = value
-        valueLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        
-        let sv = UIStackView(arrangedSubviews: [keyLabel, valueLabel])
-        sv.axis = .vertical
-        sv.spacing = 8
-        return sv
+ 
+    private func label(
+        font: UIFont = UIFont.systemFont(ofSize: 17),
+        textColor: UIColor = .black,
+        numberOfLines: Int = 0,
+        text: String = "",
+        textAlignment: NSTextAlignment = .natural
+    ) -> UILabel {
+        let label = UILabel()
+        label.font = font
+        label.textColor = textColor
+        label.numberOfLines = numberOfLines
+        label.text = text
+        label.textAlignment = textAlignment
+        return label
     }
     
+    private func smallGrayLabel() -> UILabel {
+        label(
+            font: UIFont.systemFont(ofSize: 14),
+            textColor: .lightGray,
+            text: "Party"
+        )
+    }
+    
+    private func button(with image: UIImage) -> UIButton {
+        let button = UIButton()
+        button.setImage(image, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }
 }
