@@ -16,8 +16,20 @@ struct DataSenator: Decodable {
     let person: Person
     let party: String
     let description: String
+    let extra: Extra
+    let endDate: String?
+    let website: String 
 }
 
 struct Person: Decodable {
     let name: String
+    let gender: String
+    let sortname: String
+    let birthday: String
+}
+
+struct Extra: Decodable {
+    let address: String
+    let office: String
+    
 }

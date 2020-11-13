@@ -18,6 +18,7 @@ final class FileSenatorsLoader: SenatorsLoader {
                 let senators = getSenators(from: result.objects)
                 completion(.success(senators))
             } catch {
+                print(error)
                 completion(.failure(error))
             }
         }
@@ -28,7 +29,14 @@ final class FileSenatorsLoader: SenatorsLoader {
             Senator(
                 name: $0.person.name,
                 party: $0.party,
-                description: $0.description
+                description: $0.description,
+                address: $0.extra.address,
+                office: $0.extra.office,
+                birthday: $0.person.birthday,
+                enddate: $0.endDate ?? "Not avilable",
+                gender: $0.person.gender,
+                sortname: $0.person.sortname,
+                website: $0.website
             )
         }
     }

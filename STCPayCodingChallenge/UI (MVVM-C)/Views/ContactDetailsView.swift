@@ -9,6 +9,8 @@ import UIKit
 
 final class ContactDetailsView: UIView {
     
+    var keyvalues = [[String: String]]()
+    
     lazy var photoView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 50
@@ -135,14 +137,28 @@ final class ContactDetailsView: UIView {
         return sv
     }()
     
-    
-    
-    
+    lazy var addressKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "Address"
+        return label
+    }()
     
     lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var officeKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "Office"
         return label
     }()
     
@@ -153,10 +169,28 @@ final class ContactDetailsView: UIView {
         return label
     }()
     
+    lazy var personNameKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "Name"
+        return label
+    }()
+    
     lazy var personNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var birthdayKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "Birthday"
         return label
     }()
     
@@ -167,10 +201,28 @@ final class ContactDetailsView: UIView {
         return label
     }()
     
+    lazy var endDateKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "End Date"
+        return label
+    }()
+    
     lazy var endDateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var genderKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "Gender"
         return label
     }()
     
@@ -181,10 +233,28 @@ final class ContactDetailsView: UIView {
         return label
     }()
     
+    lazy var sortnameKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "Sortname"
+        return label
+    }()
+    
     lazy var sortnameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var websiteKeyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.text = "Website "
         return label
     }()
     
@@ -197,10 +267,14 @@ final class ContactDetailsView: UIView {
     
     lazy var keyValueLabelsStack: UIStackView = {
         var stacks = [UIStackView]()
-        for i in 1...6 {
-            stacks.append(createKeyValueLabelsInStack())
-        }
-        let sv = UIStackView(arrangedSubviews: stacks)
+        let sv = UIStackView(arrangedSubviews: [
+            embedInStackView(addressKeyLabel, addressLabel),
+            embedInStackView(officeKeyLabel, officeLabel),
+            embedInStackView(birthdayKeyLabel, birthdayLabel),
+            embedInStackView(genderKeyLabel, genderLabel),
+            embedInStackView(sortnameKeyLabel, sortnameLabel),
+            embedInStackView(websiteKeyLabel, websiteLabel)
+        ])
         sv.axis = .vertical
         sv.spacing = 16
         sv.translatesAutoresizingMaskIntoConstraints = false
@@ -220,12 +294,13 @@ final class ContactDetailsView: UIView {
     }()
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: .zero)
         setup()
     }
     
-    convenience init() {
+    convenience init(keyvalues: [[String: String]]) {
         self.init(frame: .zero)
+        self.keyvalues = keyvalues
         setup()
     }
     
@@ -320,16 +395,21 @@ final class ContactDetailsView: UIView {
     }
     
     
+    private func embedInStackView(_ view1: UIView, _ view2: UIView) -> UIStackView {
+        let sv = UIStackView(arrangedSubviews: [view1, view2])
+        sv.axis = .vertical
+        sv.spacing = 8
+        return sv
+    }
     
-    
-    private func createKeyValueLabelsInStack() -> UIStackView {
+    private func createKeyValueLabelsInStack(key: String, value: String) -> UIStackView {
         let keyLabel = UILabel()
         keyLabel.font = UIFont.systemFont(ofSize: 14)
-        keyLabel.text = "key"
+        keyLabel.text = key
         keyLabel.textColor = .gray
         
         let valueLabel = UILabel()
-        valueLabel.text = "value"
+        valueLabel.text = value
         valueLabel.font = UIFont.boldSystemFont(ofSize: 16)
         
         let sv = UIStackView(arrangedSubviews: [keyLabel, valueLabel])

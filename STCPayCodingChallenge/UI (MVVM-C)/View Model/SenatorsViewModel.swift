@@ -39,7 +39,14 @@ final class SenatorsViewModel {
             UISenator(
                 name: $0.name,
                 party: $0.party,
-                description: $0.description
+                description: $0.description,
+                address: $0.address,
+                office: $0.office,
+                birthday: $0.birthday,
+                enddate: $0.enddate,
+                gender: $0.gender,
+                sortname: $0.sortname,
+                website: $0.website
             )
         }
         
