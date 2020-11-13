@@ -122,7 +122,7 @@ final class ContactDetailsView: UIView {
     
     lazy var speakButton: UIButton = {
         let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "phone"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "speak"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -139,7 +139,35 @@ final class ContactDetailsView: UIView {
     
     
     
+    lazy var addressLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var officeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var personNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var birthdayLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var endDateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
@@ -153,6 +181,13 @@ final class ContactDetailsView: UIView {
         return label
     }()
     
+    lazy var sortnameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var websiteLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 17)
@@ -160,11 +195,16 @@ final class ContactDetailsView: UIView {
         return label
     }()
     
-    lazy var phoneLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
+    lazy var keyValueLabelsStack: UIStackView = {
+        var stacks = [UIStackView]()
+        for i in 1...6 {
+            stacks.append(createKeyValueLabelsInStack())
+        }
+        let sv = UIStackView(arrangedSubviews: stacks)
+        sv.axis = .vertical
+        sv.spacing = 16
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
     }()
     
     lazy var cardView: UIView = {
@@ -206,21 +246,23 @@ final class ContactDetailsView: UIView {
     }
     
     private func setup() {
+        backgroundColor = .white
         setupCardView()
         setupPhotoView()
         setupNameAndDescriptionStack()
         setupPartyAndRoleStack()
         setupButtons()
         setupButtonsStackView()
+        setupKeyValueLabels()
     }
     
     private func setupCardView() {
         addSubview(cardView)
         NSLayoutConstraint.activate([
-            cardView.heightAnchor.constraint(equalToConstant: 350),
+            cardView.heightAnchor.constraint(equalToConstant: 300),
             cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            cardView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
+            cardView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
         ])
     }
     
@@ -266,6 +308,34 @@ final class ContactDetailsView: UIView {
             buttonsStackView.topAnchor.constraint(equalTo: partyAndRoleStack.bottomAnchor, constant: 50),
             buttonsStackView.centerXAnchor.constraint(equalTo: cardView.centerXAnchor)
         ])
+    }
+    
+    private func setupKeyValueLabels() {
+        addSubview(keyValueLabelsStack)
+        NSLayoutConstraint.activate([
+            keyValueLabelsStack.topAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 20),
+            keyValueLabelsStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            keyValueLabelsStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
+    }
+    
+    
+    
+    
+    private func createKeyValueLabelsInStack() -> UIStackView {
+        let keyLabel = UILabel()
+        keyLabel.font = UIFont.systemFont(ofSize: 14)
+        keyLabel.text = "key"
+        keyLabel.textColor = .gray
+        
+        let valueLabel = UILabel()
+        valueLabel.text = "value"
+        valueLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        let sv = UIStackView(arrangedSubviews: [keyLabel, valueLabel])
+        sv.axis = .vertical
+        sv.spacing = 8
+        return sv
     }
     
 }

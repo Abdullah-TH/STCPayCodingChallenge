@@ -40,7 +40,7 @@ final class ContactsCoordinator: UIViewController {
 extension ContactsCoordinator: ContactListViewControllerDelegate {
     
     func didSelect(senator: UISenator) {
-        let contactDetailsVC = ContactDetailsViewController()
+        let contactDetailsVC = ContactDetailsViewController(senator: senator)
         navigator.pushViewController(contactDetailsVC, animated: true)
     }
 }
