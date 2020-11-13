@@ -41,7 +41,6 @@ extension ContactsCoordinator: ContactListViewControllerDelegate {
     
     func didSelect(senator: UISenator) {
         let contactDetailsVC = ContactDetailsViewController()
-        contactDetailsVC.view.backgroundColor = .purple
         navigator.pushViewController(contactDetailsVC, animated: true)
     }
 }

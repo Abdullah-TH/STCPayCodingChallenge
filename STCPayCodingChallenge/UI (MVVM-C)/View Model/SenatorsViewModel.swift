@@ -28,9 +28,7 @@ final class SenatorsViewModel {
                 self.fetchedSenators = senators
                 self.updateUISenators()
                 self.onLoad?()
-                print(senators)
             case .failure(let error):
-                print(error)
                 self.onError?(error.localizedDescription)
             }
         }
