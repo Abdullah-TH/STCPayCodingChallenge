@@ -24,11 +24,11 @@ final class FileSenatorsLoader: SenatorsLoader {
     }
     
     private func getSenators(from dataSenators: [DataSenator]) -> [Senator] {
-        dataSenators.map { _ in
+        dataSenators.map {
             Senator(
-                name: "",
-                party: "",
-                description: ""
+                name: $0.person.name,
+                party: $0.party,
+                description: $0.description
             )
         }
     }

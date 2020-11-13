@@ -40,14 +40,15 @@ final class ContactListViewController: UIViewController {
 extension ContactListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.senators.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.reuseIdentifier, for: indexPath) as! ContactCell
-        cell.nameLabel.text = "Name"
-        cell.partyLabel.text = "Party"
-        cell.descriptionLabel.text = "Description"
+        let senator = viewModel.senators[indexPath.row]
+        cell.nameLabel.text = senator.name
+        cell.partyLabel.text = senator.party
+        cell.descriptionLabel.text = senator.description
         return cell
     }
     
