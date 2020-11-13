@@ -16,6 +16,7 @@
 		6A0B2065255ED75B00C31454 /* us_senators.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A0B2064255ED75B00C31454 /* us_senators.json */; };
 		6A0B206B255ED81B00C31454 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B206A255ED81B00C31454 /* ContactListViewController.swift */; };
 		6A0B2070255ED96400C31454 /* ContactListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B206F255ED96400C31454 /* ContactListTableView.swift */; };
+		6A0B2083255EDA8100C31454 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B2082255EDA8100C31454 /* ContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6A0B2064255ED75B00C31454 /* us_senators.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = us_senators.json; sourceTree = "<group>"; };
 		6A0B206A255ED81B00C31454 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		6A0B206F255ED96400C31454 /* ContactListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableView.swift; sourceTree = "<group>"; };
+		6A0B2082255EDA8100C31454 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				6A0B206F255ED96400C31454 /* ContactListTableView.swift */,
+				6A0B2082255EDA8100C31454 /* ContactCell.swift */,
 				6A0B206A255ED81B00C31454 /* ContactListViewController.swift */,
 			);
 			path = UI;
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0B2083255EDA8100C31454 /* ContactCell.swift in Sources */,
 				6A0B2070255ED96400C31454 /* ContactListTableView.swift in Sources */,
 				6A0B2029255ED2DD00C31454 /* AppDelegate.swift in Sources */,
 				6A0B202B255ED2DD00C31454 /* SceneDelegate.swift in Sources */,
