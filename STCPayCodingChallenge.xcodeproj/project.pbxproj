@@ -13,6 +13,7 @@
 		6A0B2035255ED2DE00C31454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0B2033255ED2DE00C31454 /* LaunchScreen.storyboard */; };
 		6A0B2040255ED2DF00C31454 /* STCPayCodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B203F255ED2DF00C31454 /* STCPayCodingChallengeTests.swift */; };
 		6A0B204B255ED2DF00C31454 /* STCPayCodingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B204A255ED2DF00C31454 /* STCPayCodingChallengeUITests.swift */; };
+		6A0B2065255ED75B00C31454 /* us_senators.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A0B2064255ED75B00C31454 /* us_senators.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		6A0B2046255ED2DF00C31454 /* STCPayCodingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STCPayCodingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0B204A255ED2DF00C31454 /* STCPayCodingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STCPayCodingChallengeUITests.swift; sourceTree = "<group>"; };
 		6A0B204C255ED2DF00C31454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A0B2064255ED75B00C31454 /* us_senators.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = us_senators.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				6A0B2031255ED2DE00C31454 /* Assets.xcassets */,
 				6A0B2033255ED2DE00C31454 /* LaunchScreen.storyboard */,
 				6A0B2036255ED2DE00C31454 /* Info.plist */,
+				6A0B2064255ED75B00C31454 /* us_senators.json */,
 			);
 			path = STCPayCodingChallenge;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0B2065255ED75B00C31454 /* us_senators.json in Resources */,
 				6A0B2035255ED2DE00C31454 /* LaunchScreen.storyboard in Resources */,
 				6A0B2032255ED2DE00C31454 /* Assets.xcassets in Resources */,
 			);
