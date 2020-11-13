@@ -19,4 +19,15 @@ struct UISenator {
     let gender: String
     let sortname: String
     let website: String
+    
+    var image: UIImage? {
+        switch party {
+        case "Democrat":
+            return #imageLiteral(resourceName: "democrat_logo")
+        case "Republican":
+            return #imageLiteral(resourceName: "republican_logo")
+        default:
+            return UIImage(systemName: "person.fill")
+        }
+    }
 }

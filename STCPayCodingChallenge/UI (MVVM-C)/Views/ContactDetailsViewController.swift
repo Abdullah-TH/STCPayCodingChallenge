@@ -42,17 +42,6 @@ final class ContactDetailsViewController: UIViewController {
         contactDetailsView.sortnameLabel.text = senator.sortname
         contactDetailsView.officeLabel.text = senator.office
         
-        contactDetailsView.photoView.image = getAppropriateImage(for: senator)
-    }
-    
-    private func getAppropriateImage(for senator: UISenator) -> UIImage? {
-        switch senator.party {
-        case "Democrat":
-            return #imageLiteral(resourceName: "democrat_logo")
-        case "Republican":
-            return #imageLiteral(resourceName: "republican_logo")
-        default:
-            return UIImage(systemName: "person.fill")
-        }
+        contactDetailsView.photoView.image = senator.image
     }
 }

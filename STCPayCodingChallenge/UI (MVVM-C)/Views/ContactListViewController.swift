@@ -77,23 +77,11 @@ extension ContactListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.reuseIdentifier, for: indexPath) as! ContactCell
         let senator = viewModel.senators[indexPath.row]
-        cell.photoView.image = getAppropriateImage(for: senator)
+        cell.photoView.image = senator.image
         cell.nameLabel.text = senator.name
         cell.partyLabel.text = senator.party
         cell.descriptionLabel.text = senator.description
         return cell
-    }
-    
-    
-    private func getAppropriateImage(for senator: UISenator) -> UIImage? {
-        switch senator.party {
-        case "Democrat":
-            return #imageLiteral(resourceName: "democrat_logo")
-        case "Republican":
-            return #imageLiteral(resourceName: "republican_logo")
-        default:
-            return UIImage(systemName: "person.fill")
-        }
     }
 }
 
