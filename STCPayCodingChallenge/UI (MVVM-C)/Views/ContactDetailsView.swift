@@ -127,7 +127,7 @@ final class ContactDetailsView: UIView {
     }
     
     private func setup() {
-        backgroundColor = .white
+        backgroundColor = Colors.backgroundColor
         setupCardView()
         setupPhotoView()
         setupNameAndDescriptionStack()
@@ -138,6 +138,7 @@ final class ContactDetailsView: UIView {
     }
     
     private func setupCardView() {
+        cardView.backgroundColor = Colors.cardBackgroundColor
         addSubview(cardView)
         NSLayoutConstraint.activate([
             cardView.heightAnchor.constraint(equalToConstant: 300),
@@ -219,7 +220,7 @@ final class ContactDetailsView: UIView {
     private func smallGrayLabel() -> UILabel {
         label(
             font: UIFont.systemFont(ofSize: 14),
-            textColor: .lightGray,
+            textColor: Colors.seconedaryText,
             text: "Party"
         )
     }

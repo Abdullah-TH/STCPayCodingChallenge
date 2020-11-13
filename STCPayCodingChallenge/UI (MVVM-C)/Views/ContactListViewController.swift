@@ -59,6 +59,7 @@ final class ContactListViewController: UIViewController {
     }
     
     private func setupTableView() {
+        view.backgroundColor = Colors.backgroundColor
         view.addSubview(tableView)
         tableView.separatorStyle = .none
         tableView.dataSource = self
