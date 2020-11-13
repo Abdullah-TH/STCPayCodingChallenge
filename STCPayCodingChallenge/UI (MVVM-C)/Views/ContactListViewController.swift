@@ -23,6 +23,7 @@ final class ContactListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Senators"
         setupTableView()
         viewModel.fetchSenators()
     }

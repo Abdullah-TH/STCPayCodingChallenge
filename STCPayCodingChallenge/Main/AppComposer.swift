@@ -9,7 +9,13 @@ import Foundation
 
 final class AppComposer {
     
-    func createContactListViewController() -> ContactListViewController {
+    func createContactsCoordinator() -> ContactsCoordinator {
+        let contactListVC = createContactListViewController()
+        let contactsCoordinator = ContactsCoordinator(contactListVC: contactListVC)
+        return contactsCoordinator
+    }
+    
+    private func createContactListViewController() -> ContactListViewController {
         let senatorsLoader = FileSenatorsLoader()
         let senatorsVM = SenatorsViewModel(senatorsLoader: senatorsLoader)
         let contactListVC = ContactListViewController(viewModel: senatorsVM)
