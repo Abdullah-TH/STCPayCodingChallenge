@@ -28,6 +28,8 @@ final class FileSenatorsLoader: SenatorsLoader {
         dataSenators.map {
             Senator(
                 name: $0.person.name,
+                firstName: $0.person.firstname,
+                lastName: $0.person.lastname,
                 party: $0.party,
                 description: $0.description,
                 address: $0.extra.address,

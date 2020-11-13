@@ -23,6 +23,8 @@ struct DataSenator: Decodable {
 
 struct Person: Decodable {
     let name: String
+    let firstname: String
+    let lastname: String 
     let gender: String
     let sortname: String
     let birthday: String

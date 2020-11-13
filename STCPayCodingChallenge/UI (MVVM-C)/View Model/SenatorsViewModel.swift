@@ -37,7 +37,7 @@ final class SenatorsViewModel {
     private func updateUISenators() {
         senators = fetchedSenators.map {
             UISenator(
-                name: $0.name,
+                name: "\($0.firstName) \($0.lastName)",
                 party: $0.party,
                 description: $0.description,
                 address: $0.address,

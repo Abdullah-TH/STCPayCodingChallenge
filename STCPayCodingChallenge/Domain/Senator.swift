@@ -10,6 +10,8 @@ import Foundation
 struct Senator: Hashable {
     
     let name: String
+    let firstName: String
+    let lastName: String 
     let party: String
     let description: String
     let address: String
