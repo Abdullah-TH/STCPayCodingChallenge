@@ -31,7 +31,24 @@ final class ContactListViewController: UIViewController {
         super.viewDidLoad()
         title = "Senators"
         setupTableView()
+        setupViewModelCallbacks()
         viewModel.fetchSenators()
+    }
+    
+    private func setupViewModelCallbacks() {
+        viewModel.onLoad = { [weak tableView] in
+            tableView?.reloadData()
+        }
+        
+        viewModel.onError = { [weak self] message in
+            guard let self = self else { return }
+            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            DispatchQueue.main.async {
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
