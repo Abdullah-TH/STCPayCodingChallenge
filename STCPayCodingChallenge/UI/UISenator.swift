@@ -5,7 +5,7 @@
 //  Created by Abdullah Althobetey on 13/11/2020.
 //
 
-import Foundation
+import UIKit
 
 struct UISenator {
     

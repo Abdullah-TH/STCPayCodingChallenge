@@ -25,8 +25,11 @@ final class ContactCell: UITableViewCell {
     
     lazy var photoView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .gray
         imageView.layer.cornerRadius = 22
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
