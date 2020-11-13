@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct RootObject: Decodable {
+    let objects: [DataSenator]
+}
+
 struct DataSenator: Decodable {
     
     let person: Person

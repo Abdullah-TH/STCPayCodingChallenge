@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let vc = ContactListViewController()
+        let vc = AppComposer().createContactListViewController()
         vc.view.backgroundColor = .purple
         window?.rootViewController = vc 
         window?.makeKeyAndVisible()
