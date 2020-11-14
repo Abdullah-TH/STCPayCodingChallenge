@@ -29,6 +29,9 @@
 		6A0B20E6255EEB3B00C31454 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B20E5255EEB3B00C31454 /* ContactDetailsViewController.swift */; };
 		6A0B20EB255EEDD400C31454 /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B20EA255EEDD400C31454 /* ContactDetailsView.swift */; };
 		6A0B20F0255F158500C31454 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0B20EF255F158500C31454 /* Colors.swift */; };
+		6AA7C60C255F502A00340A10 /* ContactCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7C60B255F502A00340A10 /* ContactCardView.swift */; };
+		6AA7C611255F50C300340A10 /* ReusableViewFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7C610255F50C300340A10 /* ReusableViewFactories.swift */; };
+		6AA7C619255F51D400340A10 /* ContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7C618255F51D400340A10 /* ContactInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		6A0B20E5255EEB3B00C31454 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		6A0B20EA255EEDD400C31454 /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
 		6A0B20EF255F158500C31454 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6AA7C60B255F502A00340A10 /* ContactCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCardView.swift; sourceTree = "<group>"; };
+		6AA7C610255F50C300340A10 /* ReusableViewFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewFactories.swift; sourceTree = "<group>"; };
+		6AA7C618255F51D400340A10 /* ContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 		6A0B20CE255EEA2D00C31454 /* View Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6AA7C610255F50C300340A10 /* ReusableViewFactories.swift */,
 				6A0B20C6255EEA1C00C31454 /* UIViewController+addChild.swift */,
 				6A0B20EF255F158500C31454 /* Colors.swift */,
 			);
@@ -214,6 +221,8 @@
 				6A0B206A255ED81B00C31454 /* ContactListViewController.swift */,
 				6A0B20E5255EEB3B00C31454 /* ContactDetailsViewController.swift */,
 				6A0B20EA255EEDD400C31454 /* ContactDetailsView.swift */,
+				6AA7C60B255F502A00340A10 /* ContactCardView.swift */,
+				6AA7C618255F51D400340A10 /* ContactInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,11 +385,13 @@
 				6A0B2083255EDA8100C31454 /* ContactCell.swift in Sources */,
 				6A0B20C7255EEA1C00C31454 /* UIViewController+addChild.swift in Sources */,
 				6A0B20F0255F158500C31454 /* Colors.swift in Sources */,
+				6AA7C611255F50C300340A10 /* ReusableViewFactories.swift in Sources */,
 				6A0B20BD255EE51800C31454 /* AppComposer.swift in Sources */,
 				6A0B20A5255EE20E00C31454 /* FileSenatorsLoader.swift in Sources */,
 				6A0B2070255ED96400C31454 /* ContactListTableView.swift in Sources */,
 				6A0B20E6255EEB3B00C31454 /* ContactDetailsViewController.swift in Sources */,
 				6A0B20B3255EE3CA00C31454 /* SenatorsViewModel.swift in Sources */,
+				6AA7C60C255F502A00340A10 /* ContactCardView.swift in Sources */,
 				6A0B20AA255EE22900C31454 /* DataSenator.swift in Sources */,
 				6A0B2029255ED2DD00C31454 /* AppDelegate.swift in Sources */,
 				6A0B20C2255EE9DE00C31454 /* ContactsCoordinator.swift in Sources */,
@@ -389,6 +400,7 @@
 				6A0B208C255EE13900C31454 /* SenatorsLoader.swift in Sources */,
 				6A0B202B255ED2DD00C31454 /* SceneDelegate.swift in Sources */,
 				6A0B206B255ED81B00C31454 /* ContactListViewController.swift in Sources */,
+				6AA7C619255F51D400340A10 /* ContactInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

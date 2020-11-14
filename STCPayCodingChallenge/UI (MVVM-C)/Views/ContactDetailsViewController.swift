@@ -28,20 +28,19 @@ final class ContactDetailsViewController: UIViewController {
     
     private func setupContactDetailsView() {
         view.addSubview(contactDetailsView)
-        contactDetailsView.nameLabel.text = senator.name
-        contactDetailsView.descriptionLabel.text = senator.description
-        contactDetailsView.partyLabel.text = senator.party
-        contactDetailsView.roleLabel.text = "Senator"
+        contactDetailsView.contactCardView.photoView.image = senator.image
+        contactDetailsView.contactCardView.nameLabel.text = senator.name
+        contactDetailsView.contactCardView.descriptionLabel.text = senator.description
+        contactDetailsView.contactCardView.partyLabel.text = senator.party
+        contactDetailsView.contactCardView.roleLabel.text = "Senator"
         
-        contactDetailsView.addressLabel.text = senator.address
-        contactDetailsView.birthdayLabel.text = senator.birthday
-        contactDetailsView.genderLabel.text = senator.gender
-        contactDetailsView.websiteLabel.text = senator.website
-        contactDetailsView.endDateLabel.text = senator.enddate
-        contactDetailsView.personNameLabel.text = senator.name
-        contactDetailsView.sortnameLabel.text = senator.sortname
-        contactDetailsView.officeLabel.text = senator.office
-        
-        contactDetailsView.photoView.image = senator.image
+        contactDetailsView.contactInfoView.addressLabel.text = senator.address
+        contactDetailsView.contactInfoView.birthdayLabel.text = senator.birthday
+        contactDetailsView.contactInfoView.genderLabel.text = senator.gender
+        contactDetailsView.contactInfoView.websiteLabel.text = senator.website
+        contactDetailsView.contactInfoView.endDateLabel.text = senator.enddate
+        contactDetailsView.contactInfoView.personNameLabel.text = senator.name
+        contactDetailsView.contactInfoView.sortnameLabel.text = senator.sortname
+        contactDetailsView.contactInfoView.officeLabel.text = senator.office
     }
 }
