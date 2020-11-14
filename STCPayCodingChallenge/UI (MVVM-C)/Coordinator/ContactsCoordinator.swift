@@ -28,7 +28,8 @@ final class ContactsCoordinator: UIViewController {
     }
     
     private func setup() {
-        contactListVC.delegate = self 
+        contactListVC.delegate = self
+        navigator.navigationBar.isHidden = true 
         navigator.viewControllers = [contactListVC]
     }
     
@@ -41,6 +42,14 @@ extension ContactsCoordinator: ContactListViewControllerDelegate {
     
     func didSelect(senator: UISenator) {
         let contactDetailsVC = ContactDetailsViewController(senator: senator)
+        contactDetailsVC.delegate = self 
         navigator.pushViewController(contactDetailsVC, animated: true)
+    }
+}
+
+extension ContactsCoordinator: ContactDetailsViewControllerDelegate {
+    
+    func goBack() {
+        navigator.popViewController(animated: true)
     }
 }

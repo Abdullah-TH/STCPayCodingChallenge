@@ -12,6 +12,8 @@ final class ContactDetailsView: UIView {
     let contactCardView = ContactCardView()
     let contactInfoView = ContactInfoView()
     
+    lazy var backButton = button(with: #imageLiteral(resourceName: "left_arrow"))
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setup()
@@ -40,9 +42,20 @@ final class ContactDetailsView: UIView {
     
     private func setup() {
         backgroundColor = Colors.backgroundColor
-        translatesAutoresizingMaskIntoConstraints = false 
+        translatesAutoresizingMaskIntoConstraints = false
+        setupBackButton()
         setupContactCardView()
         setupContactInfoView()
+    }
+    
+    private func setupBackButton() {
+        addSubview(backButton)
+        NSLayoutConstraint.activate([
+            backButton.heightAnchor.constraint(equalToConstant: 20),
+            backButton.widthAnchor.constraint(equalToConstant: 20),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+        ])
     }
     
     private func setupContactCardView() {

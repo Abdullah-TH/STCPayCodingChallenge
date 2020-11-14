@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol ContactDetailsViewControllerDelegate: class {
+    func goBack()
+}
+
 final class ContactDetailsViewController: UIViewController {
     
+    weak var delegate: ContactDetailsViewControllerDelegate?
     lazy var contactDetailsView = ContactDetailsView()
     private let senator: UISenator
     
@@ -28,6 +33,13 @@ final class ContactDetailsViewController: UIViewController {
     
     private func setupContactDetailsView() {
         view.addSubview(contactDetailsView)
+        
+        let backAction = UIAction { [weak self] action in
+            guard let self = self else { return }
+            self.delegate?.goBack()
+        }
+        contactDetailsView.backButton.addAction(backAction, for: .touchUpInside)
+        
         contactDetailsView.contactCardView.photoView.image = senator.image
         contactDetailsView.contactCardView.nameLabel.text = senator.name
         contactDetailsView.contactCardView.descriptionLabel.text = senator.description
