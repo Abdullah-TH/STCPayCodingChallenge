@@ -122,8 +122,8 @@ final class ContactCardView: UIView {
     private func setupButtons() {
         for button in [phoneButton, emailButton, speakButton] {
             NSLayoutConstraint.activate([
-                button.heightAnchor.constraint(equalToConstant: 50),
-                button.widthAnchor.constraint(equalToConstant: 50)
+                button.heightAnchor.constraint(equalToConstant: 44),
+                button.widthAnchor.constraint(equalToConstant: 44)
             ])
         }
     }
@@ -131,7 +131,7 @@ final class ContactCardView: UIView {
     private func setupButtonsStackView() {
         addSubview(buttonsStackView)
         NSLayoutConstraint.activate([
-            buttonsStackView.topAnchor.constraint(equalTo: partyAndRoleStack.bottomAnchor, constant: 50),
+            buttonsStackView.topAnchor.constraint(equalTo: partyAndRoleStack.bottomAnchor, constant: 40),
             buttonsStackView.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
