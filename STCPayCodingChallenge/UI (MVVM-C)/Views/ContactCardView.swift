@@ -43,6 +43,7 @@ final class ContactCardView: UIView {
     lazy var separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
+        view.alpha = 0.3
         return view
     }()
     
@@ -112,7 +113,9 @@ final class ContactCardView: UIView {
         NSLayoutConstraint.activate([
             partyAndRoleStack.topAnchor.constraint(equalTo: nameAndDescriptionStack.bottomAnchor, constant: 20),
             partyAndRoleStack.centerXAnchor.constraint(equalTo: nameAndDescriptionStack.centerXAnchor),
-            separatorView.widthAnchor.constraint(equalToConstant: 0.5)
+            separatorView.widthAnchor.constraint(equalToConstant: 1),
+            partyLabel.widthAnchor.constraint(equalTo: roleLabel.widthAnchor),
+            partyKeyLabel.widthAnchor.constraint(equalTo: roleKeyLabel.widthAnchor)
         ])
     }
     
