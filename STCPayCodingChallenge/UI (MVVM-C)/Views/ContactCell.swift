@@ -25,7 +25,7 @@ final class ContactCell: UITableViewCell {
     
     lazy var photoView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 22
+        imageView.layer.cornerRadius = 30
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         imageView.layer.borderWidth = 1
@@ -74,8 +74,8 @@ final class ContactCell: UITableViewCell {
     private func setupPhotoView() {
         containerView.addSubview(photoView)
         NSLayoutConstraint.activate([
-            photoView.widthAnchor.constraint(equalToConstant: 44),
-            photoView.heightAnchor.constraint(equalToConstant: 44),
+            photoView.widthAnchor.constraint(equalToConstant: 60),
+            photoView.heightAnchor.constraint(equalToConstant: 60),
             photoView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             photoView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
         ])
