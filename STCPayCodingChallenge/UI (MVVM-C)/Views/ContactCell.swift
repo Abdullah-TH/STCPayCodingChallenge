@@ -34,35 +34,10 @@ final class ContactCell: UITableViewCell {
         return imageView
     }()
     
-    lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var partyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.numberOfLines = 0
-        label.textColor = .gray
-        return label
-    }()
-    
-    lazy var labelsStackView: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [nameLabel, partyLabel, descriptionLabel])
-        sv.axis = .vertical
-        sv.spacing = 8
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
-    }()
+    lazy var nameLabel = label()
+    lazy var partyLabel = label(font: UIFont.boldSystemFont(ofSize: 15))
+    lazy var descriptionLabel = smallGrayLabel(text: "")
+    lazy var labelsStackView = stackView(views: [nameLabel, partyLabel, descriptionLabel])
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

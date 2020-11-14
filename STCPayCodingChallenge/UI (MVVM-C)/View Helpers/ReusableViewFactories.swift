@@ -8,7 +8,7 @@
 import UIKit
 
 func label(
-    font: UIFont = UIFont.systemFont(ofSize: 17),
+    font: UIFont = UIFont.boldSystemFont(ofSize: 17),
     textColor: UIColor = .black,
     numberOfLines: Int = 0,
     text: String = "",
