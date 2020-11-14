@@ -9,6 +9,26 @@ import UIKit
 
 final class ContactListTableView: UITableView {
     
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+        setup()
+    }
+    
+    convenience init() {
+        self.init(frame: .zero, style: .plain)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    private func setup() {
+        backgroundColor = Colors.backgroundColor
+        separatorStyle = .none
+    }
+    
     override func didMoveToSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
         guard let superview = superview else { return }

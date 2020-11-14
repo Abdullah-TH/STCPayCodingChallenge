@@ -80,6 +80,7 @@ final class ContactCell: UITableViewCell {
     }
     
     private func setup() {
+        selectionStyle = .none
         setupContainerView()
         setupPhotoView()
         setupLabelsStackView()

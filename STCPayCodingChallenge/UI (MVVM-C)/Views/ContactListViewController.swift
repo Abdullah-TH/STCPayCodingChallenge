@@ -51,17 +51,8 @@ final class ContactListViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if let indexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-    }
-    
     private func setupTableView() {
-        view.backgroundColor = Colors.backgroundColor
         view.addSubview(tableView)
-        tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(ContactCell.self, forCellReuseIdentifier: ContactCell.reuseIdentifier)

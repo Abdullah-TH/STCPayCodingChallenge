@@ -27,7 +27,7 @@ struct UISenator {
         case "Republican":
             return #imageLiteral(resourceName: "republican_logo")
         default:
-            return UIImage(systemName: "person.fill")
+            return UIImage(systemName: "person.crop.circle")
         }
     }
 }
